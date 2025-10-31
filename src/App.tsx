@@ -1,22 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Hero from "./components/Hero";
-import ProjectDescription from "./components/ProjectDescription";
-import Biography from "./components/Biography";
-import Stories from "./components/ShortStories";
-import Footer from "./components/Footer";
-import StoryPage from "./components/StoryPage";
-
-const HomePage: React.FC = () => {
-  return (
-    <div>
-      <Hero />
-      <ProjectDescription />
-      <Biography />
-      <Stories />
-      <Footer />
-    </div>
-  );
-};
+import StoryPage from "./pages/StoryPage";
+import { HomePage } from "./pages/HomePage";
 
 const App: React.FC = () => {
   return (

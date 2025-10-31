@@ -1,6 +1,6 @@
-import { Story } from "../types";
+import { Story, Chapter } from "../types";
 
-const part1: Story[] = [
+const chapter1: Story[] = [
   {
     id: 1,
     title: "Kot i Pies",
@@ -30,64 +30,7 @@ const part1: Story[] = [
   },
 ];
 
-const part2: Story[] = [
-  {
-    id: 6,
-    title: "Czarcia orka",
-    contentPath: "/stories/diabelskie-figle/czarcia-orka.md",
-  },
-  {
-    id: 7,
-    title: "Dlaczego dzisiaj diabły chat unikają",
-    contentPath:
-      "/stories/diabelskie-figle/dlaczego-dzisiaj-diably-chat-unikaja.md",
-  },
-  {
-    id: 8,
-    title: "Duch puszczy",
-    contentPath: "/stories/diabelskie-figle/duch-puszczy.md",
-  },
-  {
-    id: 9,
-    title: "Graj grajku graj",
-    contentPath: "/stories/diabelskie-figle/graj-grajku-graj.md",
-  },
-  {
-    id: 10,
-    title: "Zemsta",
-    contentPath: "/stories/diabelskie-figle/zemsta.md",
-  },
-];
-
-const part3: Story[] = [
-  {
-    id: 11,
-    title: "Błędny ognik",
-    contentPath: "/stories/gdy-milknie-dzwon/bledny-ognik.md",
-  },
-  {
-    id: 12,
-    title: "Głaz",
-    contentPath: "/stories/gdy-milknie-dzwon/glaz.md",
-  },
-  {
-    id: 13,
-    title: "Kmieć a zaraza",
-    contentPath: "/stories/gdy-milknie-dzwon/kmiec-a-zaraza.md",
-  },
-  {
-    id: 14,
-    title: "O kukułce, jaskółce i słowiku",
-    contentPath: "/stories/gdy-milknie-dzwon/o-kukulce-jaskolce-i-slowiku.md",
-  },
-  {
-    id: 15,
-    title: "Oniemiały dzwon",
-    contentPath: "/stories/gdy-milknie-dzwon/oniemialy-dzown.md",
-  },
-];
-
-const part4: Story[] = [
+const chapter2: Story[] = [
   {
     id: 16,
     title: "Matyś i sroka",
@@ -121,7 +64,36 @@ const part4: Story[] = [
   },
 ];
 
-const part5: Story[] = [
+const chapter3: Story[] = [
+  {
+    id: 6,
+    title: "Czarcia orka",
+    contentPath: "/stories/diabelskie-figle/czarcia-orka.md",
+  },
+  {
+    id: 7,
+    title: "Dlaczego dzisiaj diabły chat unikają",
+    contentPath:
+      "/stories/diabelskie-figle/dlaczego-dzisiaj-diably-chat-unikaja.md",
+  },
+  {
+    id: 8,
+    title: "Duch puszczy",
+    contentPath: "/stories/diabelskie-figle/duch-puszczy.md",
+  },
+  {
+    id: 9,
+    title: "Graj grajku graj",
+    contentPath: "/stories/diabelskie-figle/graj-grajku-graj.md",
+  },
+  {
+    id: 10,
+    title: "Zemsta",
+    contentPath: "/stories/diabelskie-figle/zemsta.md",
+  },
+];
+
+const chapter4: Story[] = [
   {
     id: 22,
     title: "Szewc",
@@ -145,10 +117,56 @@ const part5: Story[] = [
   },
 ];
 
-export const stories: Story[] = [
-  ...part1,
-  ...part2,
-  ...part3,
-  ...part4,
-  ...part5,
+const chapter5: Story[] = [
+  {
+    id: 11,
+    title: "Błędny ognik",
+    contentPath: "/stories/gdy-milknie-dzwon/bledny-ognik.md",
+  },
+  {
+    id: 12,
+    title: "Głaz",
+    contentPath: "/stories/gdy-milknie-dzwon/glaz.md",
+  },
+  {
+    id: 13,
+    title: "Kmieć a zaraza",
+    contentPath: "/stories/gdy-milknie-dzwon/kmiec-a-zaraza.md",
+  },
+  {
+    id: 14,
+    title: "O kukułce, jaskółce i słowiku",
+    contentPath: "/stories/gdy-milknie-dzwon/o-kukulce-jaskolce-i-slowiku.md",
+  },
+  {
+    id: 15,
+    title: "Oniemiały dzwon",
+    contentPath: "/stories/gdy-milknie-dzwon/oniemialy-dzown.md",
+  },
 ];
+
+export const chapters: Chapter[] = [
+  {
+    title: "Dlaczego zwierzęta nie żyją w zgodzie",
+    stories: chapter1,
+  },
+  {
+    title: "Ludzie i zwierzęta",
+    stories: chapter2,
+  },
+  {
+    title: "Diabelskie figle",
+    stories: chapter3,
+  },
+  {
+    title: "Tropami zbójców i rabusiów",
+    stories: chapter4,
+  },
+  {
+    title: "Gdy milknie dzwon",
+    stories: chapter5,
+  },
+];
+
+// Flattened stories array for backward compatibility (used in StoryPage)
+export const stories: Story[] = chapters.flatMap((chapter) => chapter.stories);

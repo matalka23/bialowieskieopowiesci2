@@ -9,7 +9,11 @@ export interface Story {
   id: number;
   title: string;
   contentPath: string;
-  chapters?: string[];
+}
+
+export interface Chapter {
+  title: string;
+  stories: Story[];
 }
 
 export interface ProjectInfo {

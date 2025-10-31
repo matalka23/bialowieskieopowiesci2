@@ -6,7 +6,7 @@ import {
   StoryText,
   BackButton,
 } from "./StoryPage.styles";
-import { MarkdownRenderer } from "../MarkdownRenderer";
+import { MarkdownRenderer } from "../../components/MarkdownRenderer";
 import { useStoryPage } from "./StoryPage.hook";
 
 

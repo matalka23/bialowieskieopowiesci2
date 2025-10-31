@@ -18,7 +18,7 @@ export const useStoryPage = () => {
   }, [id]);
 
   const handleBackClick = () => {
-    navigate("/");
+    navigate("/#opowiadania");
   };
   
     // Generate dynamic meta descriptions for each story

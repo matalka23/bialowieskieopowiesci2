@@ -18,10 +18,25 @@ export const StoriesTitle = styled.h2`
   margin-bottom: 3rem;
 `;
 
+export const ChapterTitle = styled.h3`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+`;
+
 export const StoriesGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  margin-bottom: 2rem;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);

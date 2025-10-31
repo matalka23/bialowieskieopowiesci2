@@ -28,29 +28,6 @@ export const StoryTitle = styled.h3`
   flex-shrink: 0;
 `;
 
-export const StoryChapters = styled.div`
-  margin-bottom: 0.75rem;
-  flex-shrink: 0;
-`;
-
-export const ChapterList = styled.ul`
-  list-style: disc;
-  padding-left: 1rem;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 0.125rem 1rem;
-  max-height: calc(6 * (0.75rem + 0.125rem)); /* 6 items height */
-  overflow: hidden;
-`;
-
-export const ChapterItem = styled.li`
-  color: #374151;
-  font-size: 0.75rem;
-  font-weight: 400;
-`;
-
 export const StoryExcerpt = styled.div`
   color: #4b5563;
   line-height: 1.625;

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { toKebabCase, extractExcerpt, extractChapters } from "../../../utils";
+import { toKebabCase, extractExcerpt,  } from "../../../utils";
 import { Story } from "../../../types";
 import { useFetchMarkdownContent } from "../../../hooks/useFetchMarkdownContent.hook";
 
@@ -12,8 +12,6 @@ export const useStoryCard = (story: Story) => {
   // Generate excerpt from markdown content
   const excerpt = markdownContent ? extractExcerpt(markdownContent, 2) : "";
 
-  // Extract chapters from markdown content
-  const chapters = markdownContent ? extractChapters(markdownContent) : [];
 
   const handleReadMore = () => {
     const kebabTitle = toKebabCase(story.title);
@@ -22,7 +20,6 @@ export const useStoryCard = (story: Story) => {
 
   return {
     excerpt,
-    chapters,
     isLoading,
     error,
     handleReadMore,

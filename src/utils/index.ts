@@ -14,21 +14,6 @@ export const toKebabCase = (str: string): string => {
     .replaceAll(/^(-|-$)/g, ""); // Remove leading/trailing hyphens
 };
 
-/**
- * Extracts chapter titles from markdown content (## headers)
- * @param content - The markdown content to extract chapters from
- * @returns Array of chapter titles
- */
-export const extractChapters = (content: string): string[] => {
-  if (!content) return [];
-
-  // Match ## headers (level 2 headers)
-  const chapterMatches = content.match(/^##\s+(.+)$/gm);
-
-  if (!chapterMatches) return [];
-
-  return chapterMatches.map((match) => match.replace(/^##\s+/, "").trim());
-};
 
 /**
  * Extracts an excerpt from markdown content (first couple of sentences)
