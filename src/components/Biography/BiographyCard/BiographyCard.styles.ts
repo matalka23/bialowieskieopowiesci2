@@ -31,4 +31,5 @@ export const CardName = styled.h3`
 export const CardBio = styled.div`
   color: #4b5563;
   line-height: 1.625;
+  text-align: justify;
 `;

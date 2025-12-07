@@ -38,6 +38,7 @@ export const ProjectTitle = styled.h2`
 export const ProjectDescription = styled.div`
   color: #374151;
   line-height: 1.625;
+  text-align: justify;
 `;
 
 export const ProjectImageContainer = styled.div`
