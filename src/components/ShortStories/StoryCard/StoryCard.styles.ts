@@ -41,7 +41,7 @@ export const StoryExcerpt = styled.div`
 `;
 
 export const ReadMoreButton = styled.button`
-  color: #2563eb;
+  color: #f59e0b;
   font-weight: 500;
   background: none;
   border: none;
@@ -51,6 +51,6 @@ export const ReadMoreButton = styled.button`
   margin-top: auto;
 
   &:hover {
-    color: #1d4ed8;
+    color: #d97706;
   }
 `;

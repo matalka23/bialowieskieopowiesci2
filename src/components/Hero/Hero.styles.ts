@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeroSection = styled.section`
-  background: linear-gradient(to right, #2563eb, #9333ea);
+  background: linear-gradient(to right, #f59e0b, #eab308);
   color: white;
   padding: 4rem 1rem;
 `;

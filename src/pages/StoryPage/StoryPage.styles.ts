@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StoryPageContainer = styled.div`
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #f59e0b 0%, #eab308 100%);
   padding: 2rem;
   display: flex;
   justify-content: center;
@@ -37,7 +37,7 @@ export const StoryText = styled.div`
 `;
 
 export const BackButton = styled.button`
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #f59e0b 0%, #eab308 100%);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -52,7 +52,7 @@ export const BackButton = styled.button`
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
   }
 
   &:active {

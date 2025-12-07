@@ -11,7 +11,7 @@ export const MarkdownContainer = styled.div`
     margin-bottom: 1rem;
     color: #2c3e50;
     font-weight: 700;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid #f59e0b;
     padding-bottom: 0.5rem;
   }
 
@@ -45,7 +45,7 @@ export const MarkdownContainer = styled.div`
   }
 
   blockquote {
-    border-left: 4px solid #3498db;
+    border-left: 4px solid #f59e0b;
     padding: 1rem;
     margin: 1rem 0;
     font-style: italic;
@@ -57,7 +57,7 @@ export const MarkdownContainer = styled.div`
     &::before {
       content: '"';
       font-size: 3rem;
-      color: #3498db;
+      color: #f59e0b;
       position: absolute;
       top: -0.5rem;
       left: 0.5rem;
@@ -80,13 +80,13 @@ export const MarkdownContainer = styled.div`
   }
 
   a.external-link {
-    color: #3498db;
+    color: #f59e0b;
     text-decoration: underline;
     font-weight: 500;
     transition: color 0.2s ease;
 
     &:hover {
-      color: #2980b9;
+      color: #d97706;
     }
   }
 
