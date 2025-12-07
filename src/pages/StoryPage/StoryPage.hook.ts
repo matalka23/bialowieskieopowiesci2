@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Story } from "../../types";
-import { stories } from "../../data/stories";
+import { stories, chapters } from "../../data/stories";
 import { useFetchMarkdownContent } from "../../hooks/useFetchMarkdownContent.hook";
 import { useDocumentHead } from "../../hooks/useDocumentHead.hook";
+import { toKebabCase } from "../../utils";
 export const useStoryPage = () => {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
@@ -18,7 +19,21 @@ export const useStoryPage = () => {
   }, [id]);
 
   const handleBackClick = () => {
-    navigate("/#opowiadania");
+    if (story) {
+      // Find the chapter that contains this story
+      const chapter = chapters.find((chapter) =>
+        chapter.stories.some((s) => s.id === story.id),
+      );
+      if (chapter) {
+        const chapterId = toKebabCase(chapter.title);
+        // Navigate with hash in a single operation
+        navigate(`/#${chapterId}`);
+      } else {
+        navigate("/#opowiadania");
+      }
+    } else {
+      navigate("/#opowiadania");
+    }
   };
   
     // Generate dynamic meta descriptions for each story

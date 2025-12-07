@@ -1,7 +1,10 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useDocumentHead } from "../../hooks/useDocumentHead.hook";
 
 export const useHomePage = () => {
+  const location = useLocation();
+
   // Reset document head to default home page values
   useDocumentHead({
     title: "Białowieskie Opowieści 2",
@@ -14,17 +17,36 @@ export const useHomePage = () => {
 
   // Handle scrolling to hash when navigating from StoryPage
   useEffect(() => {
-    const hash = globalThis.location.hash;
-    if (hash === "#opowiadania") {
-      // Small delay to ensure DOM is fully rendered
-      setTimeout(() => {
-        const element = document.getElementById("opowiadania");
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
-    }
-  }, []);
+    const scrollToHash = () => {
+      // React Router's location.hash already includes the hash fragment
+      const hash = location.hash;
+      if (hash) {
+        // Remove the # symbol to get the element ID
+        const elementId = hash.substring(1);
+        // Small delay to ensure DOM is fully rendered
+        setTimeout(() => {
+          const element = document.getElementById(elementId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 100);
+      }
+    };
+
+    // Initial scroll on mount or location change
+    scrollToHash();
+
+    // Also listen for hashchange events (for when hash is set after navigation)
+    const handleHashChange = () => {
+      scrollToHash();
+    };
+
+    globalThis.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      globalThis.removeEventListener("hashchange", handleHashChange);
+    };
+  }, [location]);
 
   return {};
 };
