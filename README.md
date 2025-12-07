@@ -80,6 +80,47 @@ Check formatting:
 npm run format:check
 ```
 
+## Deployment
+
+This application is configured for automatic deployment to GitHub Pages.
+
+### GitHub Pages Setup
+
+The application is automatically deployed to GitHub Pages at `https://matalka23.github.io/bialowieskieopowiesci2/` whenever changes are pushed to the `main` branch.
+
+#### Initial Setup
+
+1. After the first successful GitHub Actions workflow run, enable GitHub Pages in your repository settings:
+   - Go to **Settings** → **Pages**
+   - Under **Source**, select **Deploy from a branch**
+   - Select branch: `gh-pages` / `/ (root)`
+   - Click **Save**
+
+2. The site will be available at `https://matalka23.github.io/bialowieskieopowiesci2/` after the first deployment completes.
+
+#### How It Works
+
+- The GitHub Actions workflow (`.github/workflows/deploy.yml`) automatically:
+  - Builds the production version on every push to `main`
+  - Deploys the built files to the `gh-pages` branch
+  - Uses Node.js 22.13.1 (matching the project's engine requirement)
+
+- The application is configured with:
+  - Base path: `/bialowieskieopowiesci2/` (configured in `vite.config.ts`)
+  - React Router basename: `/bialowieskieopowiesci2` (configured in `src/App.tsx`)
+  - 404.html redirect for client-side routing support
+
+#### Manual Deployment
+
+If you need to deploy manually, you can:
+
+1. Build the project:
+   ```bash
+   npm run build
+   ```
+
+2. The built files will be in the `dist/` directory, ready to be deployed.
+
 ## Project Structure
 
 ```

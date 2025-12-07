@@ -11,7 +11,14 @@ export const useFetchMarkdownContent = (url: string | undefined) => {
       try {
         setIsLoading(true);
         setError(null);
-        const response = await fetch(url);
+        // Get base URL from Vite and normalize the path
+        const baseUrl = import.meta.env.BASE_URL;
+        const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+        const normalizedUrl = url.startsWith("/") 
+          ? `${normalizedBase}${url.slice(1)}` 
+          : `${normalizedBase}${url}`;
+        
+        const response = await fetch(normalizedUrl);
         if (!response.ok) {
           throw new Error(
             `Failed to fetch markdown content: ${response.statusText}`,

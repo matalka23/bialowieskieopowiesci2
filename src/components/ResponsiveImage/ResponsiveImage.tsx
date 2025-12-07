@@ -16,6 +16,9 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   onError,
   loading = "lazy",
 }) => {
+  // Get base URL from Vite (handles development vs production)
+  const baseUrl = import.meta.env.BASE_URL;
+
   // Extract the base name and extension from the src
   const getImagePaths = (originalSrc: string) => {
     const basePath = originalSrc.replace("/images/", "");
@@ -27,13 +30,17 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
     const mobileSuffix = isLogo ? "-small" : "";
     const desktopSuffix = isLogo ? "-small" : "-desktop";
 
+    // Ensure baseUrl ends with / and remove leading / from paths to avoid double slashes
+    const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+    const imageBase = normalizedBase + "images/";
+
     return {
-      mobile: `/images/mobile/${nameWithoutExt}${mobileSuffix}.${extension}`,
-      desktop: `/images/desktop/${nameWithoutExt}${desktopSuffix}.${extension}`,
-      mobileWebP: `/images/webp/${nameWithoutExt}${isLogo ? "-small" : "-compressed"}.webp`,
-      desktopWebP: `/images/webp/${nameWithoutExt}${desktopSuffix}.webp`,
-      displayWebP: `/images/webp/${nameWithoutExt}-display.webp`,
-      fallback: originalSrc,
+      mobile: `${imageBase}mobile/${nameWithoutExt}${mobileSuffix}.${extension}`,
+      desktop: `${imageBase}desktop/${nameWithoutExt}${desktopSuffix}.${extension}`,
+      mobileWebP: `${imageBase}webp/${nameWithoutExt}${isLogo ? "-small" : "-compressed"}.webp`,
+      desktopWebP: `${imageBase}webp/${nameWithoutExt}${desktopSuffix}.webp`,
+      displayWebP: `${imageBase}webp/${nameWithoutExt}-display.webp`,
+      fallback: originalSrc.startsWith("/") ? `${normalizedBase}${originalSrc.slice(1)}` : `${normalizedBase}${originalSrc}`,
     };
   };
 
