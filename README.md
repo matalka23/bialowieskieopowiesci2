@@ -6,12 +6,13 @@ A web application showcasing retellings of 31 local legends, fairy tales, and st
 
 In 2025, on the 35th anniversary of the original publication, Natalka Suszczyńska (granddaughter of the original author) created retellings of all 31 stories from the book. This project was realized thanks to an artistic scholarship from the President of Białystok.
 
-The stories are organized into five chapters:
-- **Dlaczego zwierzęta nie żyją w zgodzie** (Why animals don't live in harmony)
-- **Ludzie i zwierzęta** (People and animals)
-- **Diabelskie figle** (Devilish tricks)
-- **Tropami zbójców i rabusiów** (On the trail of robbers and thieves)
-- **Gdy milknie dzwon** (When the bell falls silent)
+The stories are organized into six chapters:
+- **Dlaczego zwierzęta nie żyją w zgodzie**
+- **Ludzie i zwierzęta**
+- **Diabelskie figle**
+- **Tropami zbójców i rabusiów**
+- **Gdy milknie dzwon**
+- **W pogoni za szczęściem**
 
 ## Tech Stack
 
@@ -108,15 +109,6 @@ public/
 ├── images/              # Images (desktop, mobile, webp formats)
 └── stories/             # Story content (markdown, organized by chapter)
 ```
-
-## Features
-
-- 📖 31 retold stories from the original book
-- 📱 Responsive design with optimized images
-- 🎨 Modern, clean UI
-- 🔍 Easy navigation between stories
-- 👥 Author biographies
-- 📝 Markdown-based content management
 
 ## License
 

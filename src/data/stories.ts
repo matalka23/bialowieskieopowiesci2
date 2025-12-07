@@ -145,6 +145,39 @@ const chapter5: Story[] = [
   },
 ];
 
+const chapter6: Story[] = [
+  {
+    id: 26,
+    title: "Cudzy rozum",
+    contentPath: "/stories/w-pogoni-za-szczesciem/cudzy-rozum.md",
+  },
+  {
+    id: 27,
+    title: "Królewskie podarki",
+    contentPath: "/stories/w-pogoni-za-szczesciem/krolewskie-podatki.md",
+  },
+  {
+    id: 28,
+    title: "O weselnicy w grochowej spódnicy",
+    contentPath: "/stories/w-pogoni-za-szczesciem/o-weselnicy.md",
+  },
+  {
+    id: 29,
+    title: "Przygody drwala Moki",
+    contentPath: "/stories/w-pogoni-za-szczesciem/przygody-drwala-moki.md",
+  },
+  {
+    id: 30,
+    title: "Szczęście",
+    contentPath: "/stories/w-pogoni-za-szczesciem/szczescie.md",
+  },
+  {
+    id: 31,
+    title: "Jak piękno z pracowitością ślub wzięły",
+    contentPath: "/stories/w-pogoni-za-szczesciem/jak-piekno-z-pracowitoscia.md",
+  },
+];
+
 export const chapters: Chapter[] = [
   {
     title: "Dlaczego zwierzęta nie żyją w zgodzie",
@@ -165,6 +198,10 @@ export const chapters: Chapter[] = [
   {
     title: "Gdy milknie dzwon",
     stories: chapter5,
+  },
+  {
+    title: "W pogoni za szczęściem",
+    stories: chapter6,
   },
 ];
 
