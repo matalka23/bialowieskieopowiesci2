@@ -39,7 +39,7 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
       desktop: `${imageBase}desktop/${nameWithoutExt}${desktopSuffix}.${extension}`,
       mobileWebP: `${imageBase}webp/${nameWithoutExt}${isLogo ? "-small" : "-compressed"}.webp`,
       desktopWebP: `${imageBase}webp/${nameWithoutExt}${desktopSuffix}.webp`,
-      displayWebP: `${imageBase}webp/${nameWithoutExt}-display.webp`,
+      displayWebP: `${imageBase}webp/${nameWithoutExt}${isLogo ? "-small" : "-display"}.webp`,
       fallback: originalSrc.startsWith("/") ? `${normalizedBase}${originalSrc.slice(1)}` : `${normalizedBase}${originalSrc}`,
     };
   };
