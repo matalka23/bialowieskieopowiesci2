@@ -3,6 +3,7 @@ export interface Person {
   name: string;
   photo: string;
   bio: string;
+  photoCredit: string;
 }
 
 export interface Story {

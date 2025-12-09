@@ -8,6 +8,7 @@ import {
   ImageContainer,
   CardName,
   CardBio,
+  PhotoCredit,
 } from "./BiographyCard.styles";
 import { useFetchMarkdownContent } from "../../../hooks/useFetchMarkdownContent.hook";
 
@@ -34,6 +35,7 @@ const BiographyCard: React.FC<BiographyCardProps> = ({ person }) => {
             }}
           />
         </CardImage>
+        <PhotoCredit>{person.photoCredit}</PhotoCredit>
       </ImageContainer>
       <CardName>{person.name}</CardName>
       <CardBio>

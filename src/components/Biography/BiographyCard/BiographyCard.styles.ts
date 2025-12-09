@@ -10,9 +10,10 @@ export const CardContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 30rem;
 `;
@@ -32,4 +33,12 @@ export const CardBio = styled.div`
   color: #4b5563;
   line-height: 1.625;
   text-align: justify;
+`;
+
+export const PhotoCredit = styled.div`
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-style: italic;
 `;
