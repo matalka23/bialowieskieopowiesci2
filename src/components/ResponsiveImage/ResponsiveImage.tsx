@@ -25,10 +25,10 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
     const nameWithoutExt = basePath.replace(/\.[^/.]+$/, "");
     const extension = basePath.split(".").pop();
 
-    // Special handling for logo - use smaller versions
+    // Special handling for logo - use smaller version on mobile, regular on desktop
     const isLogo = nameWithoutExt === "logo";
     const mobileSuffix = isLogo ? "-small" : "";
-    const desktopSuffix = isLogo ? "-small" : "-desktop";
+    const desktopSuffix = isLogo ? "" : "-desktop";
 
     // Ensure baseUrl ends with / and remove leading / from paths to avoid double slashes
     const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
@@ -38,7 +38,7 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
       mobile: `${imageBase}mobile/${nameWithoutExt}${mobileSuffix}.${extension}`,
       desktop: `${imageBase}desktop/${nameWithoutExt}${desktopSuffix}.${extension}`,
       mobileWebP: `${imageBase}webp/${nameWithoutExt}${isLogo ? "-small" : "-compressed"}.webp`,
-      desktopWebP: `${imageBase}webp/${nameWithoutExt}${desktopSuffix}.webp`,
+      desktopWebP: `${imageBase}webp/${nameWithoutExt}${isLogo ? "" : desktopSuffix}.webp`,
       displayWebP: `${imageBase}webp/${nameWithoutExt}${isLogo ? "-small" : "-display"}.webp`,
       fallback: originalSrc.startsWith("/") ? `${normalizedBase}${originalSrc.slice(1)}` : `${normalizedBase}${originalSrc}`,
     };

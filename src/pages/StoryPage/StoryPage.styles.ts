@@ -7,6 +7,10 @@ export const StoryPageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
 `;
 
 export const StoryContent = styled.div`
@@ -17,6 +21,12 @@ export const StoryContent = styled.div`
   padding: 3rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 1rem;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+  }
 `;
 
 export const StoryTitle = styled.h1`
@@ -26,6 +36,11 @@ export const StoryTitle = styled.h1`
   margin-bottom: 2rem;
   line-height: 1.2;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const StoryText = styled.div`
@@ -34,6 +49,11 @@ export const StoryText = styled.div`
   color: #4a5568;
   margin-bottom: 3rem;
   text-align: justify;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
 `;
 
 export const BackButton = styled.button`
