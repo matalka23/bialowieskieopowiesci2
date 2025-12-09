@@ -20,6 +20,8 @@ export const ImageContainer = styled.div`
 
 export const CardImage = styled.div`
   width: 20rem;
+  height: 28rem;
+  overflow: hidden;
 `;
 
 export const CardName = styled.h3`

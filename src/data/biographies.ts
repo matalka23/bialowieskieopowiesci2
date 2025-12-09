@@ -13,6 +13,6 @@ export const biographies: Person[] = [
     name: "Mikołaj Hajduk",
     photo: "/images/mikolaj-hajduk.jpg",
     bio: "/bio/mikolaj-hajduk.md",
-    photoCredit: "TBA",
+    photoCredit: "Fot. Ясамойла, Wikimedia Commons, licencja CC BY 4.0",
   },
 ];
