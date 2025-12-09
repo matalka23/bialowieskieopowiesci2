@@ -47,10 +47,10 @@ export const useStoryPage = () => {
 
   // Update document head with story-specific meta tags
   useDocumentHead({
-    title: story ? `${story.title} - Białowieskie Opowieści 2` : undefined,
+    title: story ? `${story.title} - Białowieskie Opowieści 2.0` : undefined,
     description: story ? generateStoryDescription(story.title) : undefined,
     keywords: story ? generateStoryKeywords(story.title) : undefined,
-    ogTitle: story ? `${story.title} - Białowieskie Opowieści 2` : undefined,
+    ogTitle: story ? `${story.title} - Białowieskie Opowieści 2.0` : undefined,
     ogDescription: story ? generateStoryDescription(story.title) : undefined,
     ogImage: "/images/bialowieskie-opowiesci.jpg",
   });

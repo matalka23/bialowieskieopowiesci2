@@ -1,4 +1,4 @@
-# Białowieskie Opowieści 2
+# Białowieskie Opowieści 2.0
 
 A web application showcasing retellings of 31 local legends, fairy tales, and stories from the Białowieża region. This project presents a creative reinterpretation of the original book "Białowieskie opowieści" by Mikołaj Hajduk, published in 1990.
 
