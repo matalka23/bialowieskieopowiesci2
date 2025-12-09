@@ -41,16 +41,31 @@ export const StoryExcerpt = styled.div`
 `;
 
 export const ReadMoreButton = styled.button`
-  color: #f59e0b;
-  font-weight: 500;
+  color: #92400e;
+  font-weight: 600;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
   flex-shrink: 0;
   margin-top: auto;
+  text-decoration: underline;
+  text-decoration-color: #b45309;
+  text-underline-offset: 0.25em;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 
   &:hover {
-    color: #d97706;
+    color: #78350f;
+    text-decoration-color: #92400e;
+  }
+
+  &:focus {
+    outline: 2px solid #b45309;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
   }
 `;

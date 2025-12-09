@@ -1,24 +1,11 @@
-import { defineConfig, loadEnv } from "vite";
+import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { copyFileSync } from "node:fs";
 import { join } from "node:path";
 
 // https://vite.dev/config/
-export default defineConfig(({ mode, command }) => {
-  // Load env file based on `mode` in the current working directory.
-  const env = loadEnv(mode, process.cwd(), "");
-  
-  // Get base path from environment variable, fallback to "/" if not set
-  // Normalize: ensure it starts with / and ends with / (Vite requires trailing slash)
-  // const rawBasePath = env.VITE_BASE_PATH || "/";
-  const rawBasePath = "/";
-  
-  // Ensure leading slash
-  let normalizedBasePath = rawBasePath.startsWith("/") ? rawBasePath : `/${rawBasePath}`;
-  // Ensure trailing slash (Vite requires it)
-  if (!normalizedBasePath.endsWith("/")) {
-    normalizedBasePath = `${normalizedBasePath}/`;
-  }
+export default defineConfig(({ command }) => {
+  const normalizedBasePath = "/";
   
   // Store the resolved output directory for the copy-404 plugin
   let resolvedOutDir: string | undefined;

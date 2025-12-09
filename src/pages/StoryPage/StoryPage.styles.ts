@@ -57,7 +57,7 @@ export const StoryText = styled.div`
 `;
 
 export const BackButton = styled.button`
-  background: linear-gradient(135deg, #f59e0b 0%, #eab308 100%);
+  background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -69,13 +69,25 @@ export const BackButton = styled.button`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   &:hover {
+    background: linear-gradient(135deg, #92400e 0%, #b45309 100%);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 10px 20px rgba(146, 64, 14, 0.4);
   }
 
   &:active {
     transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus {
+    outline: 3px solid #b45309;
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
   }
 `;
