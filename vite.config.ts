@@ -10,7 +10,8 @@ export default defineConfig(({ mode, command }) => {
   
   // Get base path from environment variable, fallback to "/" if not set
   // Normalize: ensure it starts with / and ends with / (Vite requires trailing slash)
-  const rawBasePath = env.VITE_BASE_PATH || "/";
+  // const rawBasePath = env.VITE_BASE_PATH || "/";
+  const rawBasePath = "/";
   
   // Ensure leading slash
   let normalizedBasePath = rawBasePath.startsWith("/") ? rawBasePath : `/${rawBasePath}`;
