@@ -6,7 +6,7 @@ export const biographies: Person[] = [
     name: "Natalka Suszczyńska",
     photo: "/images/natalka-suszczynska.jpg",
     bio: "/bio/natalka-suszczynska.md",
-    photoCredit: "Fot. Kasia Szejnach",
+    photoCredit: "Fot. Kasia Szenajch",
   },
   {
     id: 2,
